@@ -1,0 +1,21 @@
+name: MorePvpOptions
+version: ${project.version}
+main: com.captainbboy.morepvpoptions.MorePvpOptions
+api-version: 1.17
+authors: [ captain_bboy ]
+description:
+  'Adds more options to PvP. Examples: keepInventory only for PvP deaths.'
+commands:
+  pvpoptions:
+    description: View/Change MorePvpOption's settings.
+    permission: morepvpoptions.pvpoptions
+    usage: /<command> <get/set> <optionName> [value]
+  setbasearea:
+    aliases:
+      - setbase
+    description: Set your base area (usable if the trespassing rule is enabled).
+  forcesetbasearea:
+    description: Set a player's base area (usable if the trespassing rule is enabled).
+    usage: /<command> <playerName> [worldName] [x] [y] [z]
+    aliases:
+      - forcesetbase
