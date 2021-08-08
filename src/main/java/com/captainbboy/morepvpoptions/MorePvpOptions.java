@@ -27,11 +27,6 @@ public final class MorePvpOptions extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        // SQLite Database Handler:
-        this.db = new SQLite(this);
-        this.db.load();
-        this.db.initialize();
-
         // If no config.yml, create config.yml
         saveDefaultConfig();
 
@@ -53,6 +48,11 @@ public final class MorePvpOptions extends JavaPlugin {
         config.options().copyDefaults(true);
         saveConfig();
 
+        // SQLite Database Handler:
+        this.db = new SQLite(this);
+        this.db.load();
+        this.db.initialize();
+
         // Event Handlers:
         getServer().getPluginManager().registerEvents(new onPlayerDamageEvent(this), this);
         getServer().getPluginManager().registerEvents(new onPlayerDeathEvent(this), this);
@@ -73,7 +73,6 @@ public final class MorePvpOptions extends JavaPlugin {
         PlayerBaseHandler.init();
 
         getServer().getConsoleSender().sendMessage("§8§l[§4§lMorePvpOptions§8§l] §c§lPlugin loaded.");
-
 
     }
 
